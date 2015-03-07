@@ -1,7 +1,7 @@
 var jsonparse = require('cog/jsonparse');
 
 /**
-  ## `rtc-signal/process(signaller, opts) => fn(message)`
+  ### `rtc-signal/process(signaller, opts) => fn(message)`
 
   The core processing logic that is used to respond to incoming signaling
   messages.

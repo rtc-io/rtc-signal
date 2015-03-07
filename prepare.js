@@ -1,3 +1,13 @@
+/**
+  ### `rtc-signal/prepare(args) => String`
+
+  Convert an array of values into a pipe-delimited string.
+
+**/
+module.exports = function(args) {
+  return args.map(prepareArg).join('|');
+};
+
 function prepareArg(arg) {
   if (typeof arg == 'object' && (! (arg instanceof String))) {
     return JSON.stringify(arg);
@@ -8,7 +18,3 @@ function prepareArg(arg) {
 
   return arg;
 }
-
-module.exports = function(args) {
-  return args.map(prepareArg).join('|');
-};
