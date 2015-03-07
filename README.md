@@ -9,11 +9,19 @@ Core rtc.io signal processing logic available for use in rtc.io signallers.
 
 ## Reference
 
-### `rtc-signal/prepare(args) => String`
+### rtc-signal/prepare
+
+```
+fn(args) => String
+```
 
 Convert an array of values into a pipe-delimited string.
 
-### `rtc-signal/process(signaller, opts) => fn(message)`
+### rtc-signal/process
+
+```
+fn(signaller, opts) => fn(message)
+```
 
 The core processing logic that is used to respond to incoming signaling
 messages.

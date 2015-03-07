@@ -1,5 +1,9 @@
 /**
-  ### `rtc-signal/prepare(args) => String`
+  ### rtc-signal/prepare
+
+  ```
+  fn(args) => String
+  ```
 
   Convert an array of values into a pipe-delimited string.
 
