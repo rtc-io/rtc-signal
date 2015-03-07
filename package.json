@@ -1,5 +1,5 @@
 {
-  "name": "rtc-signal-processor",
+  "name": "rtc-signal",
   "version": "1.0.0",
   "description": "The core processing logic for the client component of rtc.io signalling",
   "main": "index.js",
@@ -20,5 +20,8 @@
   "bugs": {
     "url": "https://github.com/rtc-io/rtc-signal-processor/issues"
   },
-  "homepage": "https://github.com/rtc-io/rtc-signal-processor"
+  "homepage": "https://github.com/rtc-io/rtc-signal-processor",
+  "dependencies": {
+    "cog": "^1.0.0"
+  }
 }
