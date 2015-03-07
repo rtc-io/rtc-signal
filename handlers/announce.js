@@ -1,16 +1,5 @@
 var extend = require('cog/extend');
 
-/**
-  #### announce
-
-  ```
-  /announce|%metadata%|{"id": "...", ... }
-  ```
-
-  When an announce message is received by the signaller, the attached
-  object data is decoded and the signaller emits an `announce` message.
-
-**/
 module.exports = function(signaller) {
 
   function dataAllowed(data) {

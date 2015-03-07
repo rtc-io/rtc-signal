@@ -1,7 +1,13 @@
+# rtc-signal
+
+Core rtc.io signal processing logic available for use in rtc.io signallers.
+
 
 [![NPM](https://nodei.co/npm/rtc-signal.png)](https://nodei.co/npm/rtc-signal/)
 
 
+
+## Reference
 
 ### `rtc-signal/prepare(args) => String`
 
@@ -11,15 +17,6 @@ Convert an array of values into a pipe-delimited string.
 
 The core processing logic that is used to respond to incoming signaling
 messages.
-
-#### announce
-
-```
-/announce|%metadata%|{"id": "...", ... }
-```
-
-When an announce message is received by the signaller, the attached
-object data is decoded and the signaller emits an `announce` message.
 
 ## License(s)
 
