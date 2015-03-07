@@ -9,7 +9,7 @@ Core rtc.io signal processing logic available for use in rtc.io signallers.
 
 ## Reference
 
-### rtc-signal/prepare
+### prepare
 
 ```
 fn(args) => String
@@ -17,7 +17,7 @@ fn(args) => String
 
 Convert an array of values into a pipe-delimited string.
 
-### rtc-signal/process
+### process
 
 ```
 fn(signaller, opts) => fn(message)

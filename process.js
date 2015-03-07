@@ -1,7 +1,7 @@
 var jsonparse = require('cog/jsonparse');
 
 /**
-  ### rtc-signal/process
+  ### process
 
   ```
   fn(signaller, opts) => fn(message)

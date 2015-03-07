@@ -1,5 +1,5 @@
 /**
-  ### rtc-signal/prepare
+  ### prepare
 
   ```
   fn(args) => String
