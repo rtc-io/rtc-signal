@@ -76,12 +76,12 @@ module.exports = function(signaller, opts) {
 
       // if we got data from ourself, then this is pretty dumb
       // but if we have then throw it away
-      if (srcData && srcData.id === signaller.id) {
+      if (srcData === signaller.id) {
         return console.warn('got data from ourself, discarding');
       }
 
       // get the source state
-      srcState = signaller.peers.get(srcData && srcData.id) || srcData;
+      srcState = signaller.peers.get(srcData) || srcData;
 
       // handle commands
       if (parts[0].charAt(0) === '/') {
