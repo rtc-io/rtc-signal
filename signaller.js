@@ -55,7 +55,13 @@ module.exports = function(opts, bufferMessage) {
   };
 
   /**
-    ### `send(data)`
+    #### `send(args*)`
+
+    Prepare a message for sending, e.g.:
+
+    ```js
+    signaller.send('/foo', 'bar');
+    ```
 
   **/
   signaller.send = require('./send')(signaller, bufferMessage);

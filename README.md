@@ -52,7 +52,13 @@ They would be assigned roles:
 - `b11f4fd0-feb5-447c-80c8-c51d8c3cced2`
 - `8a07f82e-49a5-4b9b-a02e-43d911382be6` (master)
 
-### `send(data)`
+#### `send(args*)`
+
+Prepare a message for sending, e.g.:
+
+```js
+signaller.send('/foo', 'bar');
+```
 
 #### `to(targetId)`
 
