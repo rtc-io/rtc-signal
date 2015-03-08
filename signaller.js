@@ -28,7 +28,7 @@ module.exports = function(opts, bufferMessage) {
   signaller.id = (opts || {}).id || cuid();
 
   /**
-    ### isMaster(targetId)
+    #### `isMaster(targetId) => Boolean`
 
     A simple function that indicates whether the local signaller is the master
     for it's relationship with peer signaller indicated by `targetId`.  Roles
@@ -61,7 +61,7 @@ module.exports = function(opts, bufferMessage) {
   signaller.send = require('./send')(signaller, bufferMessage);
 
   /**
-    ### to(targetId)
+    #### `to(targetId)`
 
     Use the `to` function to send a message to the specified target peer.
     A large parge of negotiating a WebRTC peer connection involves direct
@@ -93,7 +93,7 @@ module.exports = function(opts, bufferMessage) {
   signaller.to = require('./send-to')(signaller, bufferMessage);
 
   /**
-    ## Signaller Internals
+    ### Signaller Internals
 
     The following functions are designed for use by signallers that are built
     on top of this base signaller.
@@ -101,7 +101,7 @@ module.exports = function(opts, bufferMessage) {
 **/
 
   /**
-    ### `_announce()`
+    #### `_announce()`
 
     The internal function that constructs the `/announce` message and triggers
     the `local:announce` event.
@@ -113,14 +113,14 @@ module.exports = function(opts, bufferMessage) {
   };
 
   /**
-    ### `_process(data)`
+    #### `_process(data)`
 
 
   **/
   signaller._process = require('./process')(signaller);
 
   /**
-    ### `_update`
+    #### `_update`
 
     Internal function that updates core announce attributes with
     updated data.

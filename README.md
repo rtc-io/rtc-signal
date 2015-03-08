@@ -33,7 +33,7 @@ messages from an incoming source.  The signaller is capable of
 sending messages outbound using the `bufferMessage` function
 that is supplied to the signaller.
 
-### isMaster(targetId)
+#### `isMaster(targetId) => Boolean`
 
 A simple function that indicates whether the local signaller is the master
 for it's relationship with peer signaller indicated by `targetId`.  Roles
@@ -54,7 +54,7 @@ They would be assigned roles:
 
 ### `send(data)`
 
-### to(targetId)
+#### `to(targetId)`
 
 Use the `to` function to send a message to the specified target peer.
 A large parge of negotiating a WebRTC peer connection involves direct
@@ -82,19 +82,19 @@ pc.createOffer(
 );
 ```
 
-## Signaller Internals
+### Signaller Internals
 
 The following functions are designed for use by signallers that are built
 on top of this base signaller.
 
-### `_announce()`
+#### `_announce()`
 
 The internal function that constructs the `/announce` message and triggers
 the `local:announce` event.
 
-### `_process(data)`
+#### `_process(data)`
 
-### `_update`
+#### `_update`
 
 Internal function that updates core announce attributes with
 updated data.
