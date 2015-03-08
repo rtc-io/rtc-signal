@@ -3,6 +3,7 @@ var extend = require('cog/extend');
 var getable = require('cog/getable');
 var cuid = require('cuid');
 var mbus = require('mbus');
+var prepare = require('./prepare');
 
 /**
   ## `signaller(opts, bufferMessage) => mbus`
@@ -23,6 +24,16 @@ module.exports = function(opts, bufferMessage) {
     browserVersion: detect.browserVersion,
     agent: 'unknown'
   };
+
+  function createSender(header) {
+    return function() {
+      var args = header.concat([].slice.call(arguments));
+
+      // inject the signaller.id
+      args.splice(3, 0, signaller.id);
+      bufferMessage(prepare(args));
+    }
+  }
 
   // initialise the signaller id
   signaller.id = (opts || {}).id || cuid();
@@ -64,7 +75,16 @@ module.exports = function(opts, bufferMessage) {
     ```
 
   **/
-  signaller.send = require('./send')(signaller, bufferMessage);
+  signaller.send = function() {
+    var args = [].slice.call(arguments);
+
+    // inject the metadata
+    args.splice(1, 0, signaller.id);
+
+    // send the message
+    bufferMessage(prepare(args));
+  };
+
 
   /**
     #### `to(targetId)`
@@ -96,15 +116,18 @@ module.exports = function(opts, bufferMessage) {
     ```
 
   **/
-  signaller.to = require('./send-to')(signaller, bufferMessage);
+  signaller.to = function(targetId) {
+    return {
+      send: createSender(['/to', targetId])
+    };
+  };
 
   /**
     ### Signaller Internals
 
     The following functions are designed for use by signallers that are built
     on top of this base signaller.
-
-**/
+  **/
 
   /**
     #### `_announce()`
