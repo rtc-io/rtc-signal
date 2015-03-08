@@ -27,5 +27,8 @@
     "cuid": "^1.2.4",
     "mbus": "^2.0.0",
     "rtc-core": "^4.0.0"
+  },
+  "devDependencies": {
+    "tape": "^3.5.0"
   }
 }
