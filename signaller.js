@@ -25,7 +25,7 @@ module.exports = function(opts, bufferMessage) {
     agent: 'unknown'
   };
 
-  function createSender(header) {
+  function createToMessage(header) {
     return function() {
       var args = header.concat([].slice.call(arguments));
 
@@ -118,7 +118,7 @@ module.exports = function(opts, bufferMessage) {
   **/
   signaller.to = function(targetId) {
     return {
-      send: createSender(['/to', targetId])
+      send: createToMessage(['/to', targetId])
     };
   };
 
