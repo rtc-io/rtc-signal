@@ -4,6 +4,15 @@ var getable = require('cog/getable');
 var cuid = require('cuid');
 var mbus = require('mbus');
 
+/**
+  ## `signaller(opts, bufferMessage) => mbus`
+
+  Create a base level signaller which is capable of processing
+  messages from an incoming source.  The signaller is capable of
+  sending messages outbound using the `bufferMessage` function
+  that is supplied to the signaller.
+
+**/
 module.exports = function(opts, bufferMessage) {
   var signaller = mbus('', (opts || {}).logger);
   var peers = signaller.peers = getable({});
