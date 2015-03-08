@@ -13,7 +13,7 @@ module.exports = function(signaller, send) {
 
   return function(targetId) {
     return {
-      send: createSender(['/to', targetId]);
+      send: createSender(['/to', targetId])
     };
   };
 };
