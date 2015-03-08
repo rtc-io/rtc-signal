@@ -23,6 +23,9 @@
   },
   "homepage": "https://github.com/rtc-io/rtc-signal-processor",
   "dependencies": {
-    "cog": "^1.0.0"
+    "cog": "^1.0.0",
+    "cuid": "^1.2.4",
+    "mbus": "^2.0.0",
+    "rtc-core": "^4.0.0"
   }
 }
