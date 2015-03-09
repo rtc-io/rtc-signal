@@ -15,7 +15,13 @@ var prepare = require('./prepare');
 
 **/
 module.exports = function(opts, bufferMessage) {
+  // get the autoreply setting
+  var autoreply = (opts || {}).autoreply;
+
+  // create the signaller mbus
   var signaller = mbus('', (opts || {}).logger);
+
+  // initialise the peers
   var peers = signaller.peers = getable({});
 
   // initialise the signaller attributes
@@ -158,6 +164,9 @@ module.exports = function(opts, bufferMessage) {
   signaller._update = function(data) {
     extend(attributes, data, { id: signaller.id });
   };
+
+  // set the autoreply flag
+  signaller.autoreply = autoreply === undefined || autoreply;
 
   return signaller;
 };
