@@ -5,7 +5,7 @@ Core rtc.io signal processing logic available for use in rtc.io signallers.
 
 [![NPM](https://nodei.co/npm/rtc-signal.png)](https://nodei.co/npm/rtc-signal/)
 
-
+[![Build Status](https://img.shields.io/travis/rtc-io/rtc-signal-processor.svg?branch=master)](https://travis-ci.org/rtc-io/rtc-signal-processor) 
 
 ## Reference
 
