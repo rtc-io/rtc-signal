@@ -9,7 +9,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rtc-io/rtc-signal-processor.git"
+    "url": "https://github.com/rtc-io/rtc-signal.git"
   },
   "keywords": [
     "webrtc",
@@ -19,9 +19,9 @@
   "author": "Damon Oehlman <damon.oehlman@nicta.com.au>",
   "license": "Apache 2.0",
   "bugs": {
-    "url": "https://github.com/rtc-io/rtc-signal-processor/issues"
+    "url": "https://github.com/rtc-io/rtc-signal/issues"
   },
-  "homepage": "https://github.com/rtc-io/rtc-signal-processor",
+  "homepage": "https://github.com/rtc-io/rtc-signal",
   "dependencies": {
     "cog": "^1.0.0",
     "cuid": "^1.2.4",
