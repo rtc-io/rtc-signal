@@ -43,3 +43,14 @@ test('the signaller has replied with the expected response', function(t) {
   t.deepEqual(message.split('|').slice(0, 4), ['/to', '2', '/announce', signaller.id], 'matched expected');
 });
 
+test('reannounce second peer and ensure no additional replies are generated', function(t) {
+  t.plan(3);
+  signaller.once('peer:update', function(data) {
+    t.equal(data.id, 2, 'peer:update triggered');
+  });
+
+  signaller._process('/announce|2|' + JSON.stringify({ id: 2, room: 'foo' }));
+  t.ok(signaller.peers.get(2), 'registered peer');
+  t.equal(outbound.length, 0, 'no additional messages generated');
+});
+
