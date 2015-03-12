@@ -27,7 +27,7 @@ module.exports = function(signaller) {
       signaller('peer:connected', data.id, data);
 
       // if the peer is existing, then update the data
-      if (peer && (! peer.inactive)) {
+      if (peer) {
         // update the data
         extend(peer.data, data);
 
