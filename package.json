@@ -1,6 +1,6 @@
 {
   "name": "rtc-signal",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "The core processing logic for the client component of rtc.io signalling",
   "main": "index.js",
   "scripts": {
