@@ -49,10 +49,6 @@ module.exports = function(signaller) {
       // initialise the peer data
       extend(peer.data, data);
 
-      // reset inactivity state
-      clearTimeout(peer.leaveTimer);
-      peer.inactive = false;
-
       // set the peer data
       signaller.peers.set(data.id, peer);
 
