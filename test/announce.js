@@ -54,3 +54,10 @@ test('reannounce second peer and ensure no additional replies are generated', fu
   t.equal(outbound.length, 0, 'no additional messages generated');
 });
 
+test('have the signaller indicate it is going to leave', function(t) {
+  t.plan(3);
+  t.equal(outbound.length, 0, 'no messages exist in outbound queue');
+  signaller._leave();
+  t.equal(outbound.length, 1, 'leave message exists');
+  t.equal(outbound[0], '/leave|' + signaller.id + '|{"id":"' + signaller.id + '"}', 'correctly formatted leave message');
+});

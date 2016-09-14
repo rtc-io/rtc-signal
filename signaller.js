@@ -148,6 +148,18 @@ module.exports = function(opts, bufferMessage) {
   };
 
   /**
+    #### `_leave()`
+
+    The internal function that should be called when a peer gracefully leaves
+    the call. This will send a `/leave` message to the other peer indicating that
+    this peer connection should be closed
+
+  **/
+  signaller._leave = function() {
+    signaller.send('/leave', { id: signaller.id });
+  };
+
+  /**
     #### `_process(data)`
 
 
